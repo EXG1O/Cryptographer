@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>763</width>
+    <height>332</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="Window">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>741</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	border-radius: 7px;
+	background-color: #3E2565;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="WindowFrame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>741</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	background-color: #623AA3;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="CloseWindowButton">
+      <property name="geometry">
+       <rect>
+        <x>701</x>
+        <y>0</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: white;
+	border: none;
+	border-top-right-radius: 7px;
+	background-color: #623AA3;
+}
+
+QPushButton:hover{
+	background-color: #7A4FC1;
+}
+
+QPushButton:pressed{
+	color: #EA2F4E;
+}</string>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="MinimizeWindowButton">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>0</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: white;
+	border: none;
+	border-top-right-radius: 7px;
+	background-color: #623AA3;
+}
+
+QPushButton:hover{
+	background-color: #7A4FC1;
+}
+
+QPushButton:pressed{
+	color: #EA2F4E;
+}</string>
+      </property>
+      <property name="text">
+       <string>_</string>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPlainTextEdit" name="ProgramLogsPlainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>701</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPlainTextEdit{
+	color: white;
+	border-radius: 6px;
+	background-color: #623AA3;
+}</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>Ключ шифрования:
+  • Отсутствует
+
+Файл(ы) для шифрования/расшифрования:
+  • Отсутству(ет/ют)
+
+Последние действие:
+  • Отсутству(ет/ют)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CreateCryptoKeyButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>271</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	color: white;
+	border-radius: 8px;
+	background-color: #C104A5;
+}
+
+QPushButton:hover{
+	background-color: #CF03B0;
+}
+
+QPushButton:pressed{
+	background-color: #AF0396;
+}</string>
+     </property>
+     <property name="text">
+      <string>Создать ключ шифрования</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="AddCryptoKeyButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>250</y>
+       <width>271</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	color: white;
+	border-radius: 8px;
+	background-color: #C104A5;
+}
+
+QPushButton:hover{
+	background-color: #CF03B0;
+}
+
+QPushButton:pressed{
+	background-color: #AF0396;
+}</string>
+     </property>
+     <property name="text">
+      <string>Добавить ключ шифрования</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="AddFilesButton">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>200</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	color: white;
+	border-radius: 8px;
+	background-color: #C104A5;
+}
+
+QPushButton:hover{
+	background-color: #CF03B0;
+}
+
+QPushButton:pressed{
+	background-color: #AF0396;
+}</string>
+     </property>
+     <property name="text">
+      <string>Добавить файл(ы)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="EncryptFilesButton">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>200</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	color: white;
+	border-radius: 8px;
+	background-color: #C104A5;
+}
+
+QPushButton:hover{
+	background-color: #CF03B0;
+}
+
+QPushButton:pressed{
+	background-color: #AF0396;
+}</string>
+     </property>
+     <property name="text">
+      <string>Зашифровать файл(ы)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DecipherFilesButton">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>250</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	color: white;
+	border-radius: 8px;
+	background-color: #C104A5;
+}
+
+QPushButton:hover{
+	background-color: #CF03B0;
+}
+
+QPushButton:pressed{
+	background-color: #AF0396;
+}</string>
+     </property>
+     <property name="text">
+      <string>Расшифровать файл(ы)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RemoveFilesButton">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>250</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	color: white;
+	border-radius: 8px;
+	background-color: #C104A5;
+}
+
+QPushButton:hover{
+	background-color: #CF03B0;
+}
+
+QPushButton:pressed{
+	background-color: #AF0396;
+}</string>
+     </property>
+     <property name="text">
+      <string>Удалить файл(ы)</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
