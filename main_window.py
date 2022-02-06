@@ -145,7 +145,7 @@ class MainWindow(QtWidgets.QMainWindow):
 				for file in self.program_info['Files']:
 					with open(file, 'rb') as f:
 						data = f.read()
-						data = crypto_key.encrypt(f.read())
+						data = crypto_key.encrypt(data)
 					with open(file, 'wb') as f:
 						f.write(data)
 
@@ -161,18 +161,15 @@ class MainWindow(QtWidgets.QMainWindow):
 			if self.program_info['Crypto_key'] != None:
 				with open(self.program_info['Crypto_key'], 'rb') as file:
 					crypto_key =  Fernet(file.read())
-				try:
-					for file in self.program_info['Files']:
-						with open(file, 'rb') as f:
-							data = f.read()
-							data = crypto_key.decrypt(f.read())
-						with open(file, 'wb') as f:
-							f.write(data)
+				for file in self.program_info['Files']:
+					with open(file, 'rb') as f:
+						data = f.read()
+						data = crypto_key.decrypt(data)
+					with open(file, 'wb') as f:
+						f.write(data)
 
-					MessageBox(text = 'Вы успешно расшифровали файл(ы).', button_1 = 'Окей')
-					self.update_program_logs('Успешное расшифрование файл(а/ов).')
-				except InvalidToken:
-					MessageBox(text = f'Файл "{file}" уже расшифрован!', button_1 = 'Окей')
+				MessageBox(text = 'Вы успешно расшифровали файл(ы).', button_1 = 'Окей')
+				self.update_program_logs('Успешное расшифрование файл(а/ов).')
 			else:
 				MessageBox(text = 'Сначала добавьте ключ шифрования!', button_1 = 'Окей')
 	# ==================================================================
