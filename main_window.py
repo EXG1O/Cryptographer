@@ -70,13 +70,21 @@ class MainWindow(QtWidgets.QMainWindow):
 		data = QtWidgets.QFileDialog.getOpenFileName(self, 'Выберите ключ шифрования', filter = ("Ключ шифрования (*.key)"))
 		if data[0] != '':
 			self.program_info['Crypto_key'] = data[0]
-			self.update_program_logs(recent_actions = 'Добавление ключа доступа')
+			if self.ui.AddCryptoKeyButton.text() == 'Заменить ключ шифрования':
+				self.update_program_logs(recent_actions = 'Успешно заменён ключ шифрования')
+			else:
+				self.update_program_logs(recent_actions = 'Успешно добавлен ключ шифрования')
+			self.ui.AddCryptoKeyButton.setText('Заменить ключ шифрования')
 
 	def add_files(self):
 		files = QtWidgets.QFileDialog.getOpenFileNames(self)
 		if files[0] != []:
 			self.program_info['Files'] = files[0]
-			self.update_program_logs(recent_actions = 'Успешное добавление файлов для шифрования/расшифрования')
+			if self.ui.AddFilesButton.text() == 'Заменить файл(ы)':
+				self.update_program_logs(recent_actions = 'Успешная замена файл(а/ов) для шифрования/расшифрования')
+			else:
+				self.update_program_logs(recent_actions = 'Успешное добавление файл(а/ов) для шифрования/расшифрования')
+			self.ui.AddFilesButton.setText('Заменить файл(ы)')
 
 	def remove_files_button(self):
 		message_box = MessageBox(text = 'Вы точно хотите удалить файл(ы) для шифрования/расшифрования из данных программы?', button_1 = 'Да', button_2 = 'Нет')
@@ -132,6 +140,7 @@ class MainWindow(QtWidgets.QMainWindow):
 		if text == 'Да':
 			self.program_info['Files'] = None
 			self.update_program_logs('Успешное удаление фай(а/лов) для шифрования/расшифрования из данных программы')
+			self.ui.AddFilesButton.setText('Добавить файл(ы)')
 			MessageBox(text = 'Вы успешно удалили файл(ы) для шифрования/расшифрования из данных программы.', button_1 = 'Окей')
 
 	def encrypt_files(self, message_box, text):
@@ -139,18 +148,21 @@ class MainWindow(QtWidgets.QMainWindow):
 
 		if text == 'Да':
 			if self.program_info['Crypto_key'] != None:
-				with open(self.program_info['Crypto_key'], 'rb') as file:
-					data = file.read()
-					crypto_key =  Fernet(data)
-				for file in self.program_info['Files']:
-					with open(file, 'rb') as f:
+				if self.program_info['Files'] != None:
+					with open(self.program_info['Crypto_key'], 'rb') as f:
 						data = f.read()
-						data = crypto_key.encrypt(data)
-					with open(file, 'wb') as f:
-						f.write(data)
+						crypto_key =  Fernet(data)
+					for file in self.program_info['Files']:
+						with open(file, 'rb') as f:
+							data = f.read()
+							data = crypto_key.encrypt(data)
+						with open(file, 'wb') as f:
+							f.write(data)
 
-				MessageBox(text = 'Вы успешно зашифровали файл(ы).', button_1 = 'Окей')
-				self.update_program_logs('Успешное шифрование файл(а/ов).')
+					MessageBox(text = 'Вы успешно зашифровали файл(ы).', button_1 = 'Окей')
+					self.update_program_logs('Успешное шифрование файл(а/ов).')
+				else:
+					MessageBox(text = 'Сначала добавьте файлы, которые вы хотите зашифровать!', button_1 = 'Окей')
 			else:
 				MessageBox(text = 'Сначала добавьте ключ шифрования!', button_1 = 'Окей')
 
@@ -159,17 +171,24 @@ class MainWindow(QtWidgets.QMainWindow):
 
 		if text == 'Да':
 			if self.program_info['Crypto_key'] != None:
-				with open(self.program_info['Crypto_key'], 'rb') as file:
-					crypto_key =  Fernet(file.read())
-				for file in self.program_info['Files']:
-					with open(file, 'rb') as f:
-						data = f.read()
-						data = crypto_key.decrypt(data)
-					with open(file, 'wb') as f:
-						f.write(data)
+				if self.program_info['Files'] != None:
+					try:
+						with open(self.program_info['Crypto_key'], 'rb') as f:
+							data = f.read()
+							crypto_key = Fernet(data)
+						for file in self.program_info['Files']:
+							with open(file, 'rb') as f:
+								data = f.read()
+								data = crypto_key.decrypt(data)
+							with open(file, 'wb') as f:
+								f.write(data)
 
-				MessageBox(text = 'Вы успешно расшифровали файл(ы).', button_1 = 'Окей')
-				self.update_program_logs('Успешное расшифрование файл(а/ов).')
+						MessageBox(text = 'Вы успешно расшифровали файл(ы).', button_1 = 'Окей')
+						self.update_program_logs('Успешное расшифрование файл(а/ов).')
+					except InvalidToken:
+						MessageBox(text = f'Файл "{file}" уже расшифрован!', button_1 = 'Окей')				
+				else:
+					MessageBox(text = 'Сначала добавьте файлы, которые вы хотите расшифровать!', button_1 = 'Окей')
 			else:
 				MessageBox(text = 'Сначала добавьте ключ шифрования!', button_1 = 'Окей')
 	# ==================================================================
