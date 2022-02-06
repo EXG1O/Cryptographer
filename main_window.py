@@ -162,7 +162,7 @@ class MainWindow(QtWidgets.QMainWindow):
 					MessageBox(text = 'Вы успешно зашифровали файл(ы).', button_1 = 'Окей')
 					self.update_program_logs('Успешное шифрование файл(а/ов).')
 				else:
-					MessageBox(text = 'Сначала добавьте файлы, которые вы хотите зашифровать!', button_1 = 'Окей')
+					MessageBox(text = 'Сначала добавьте файл(ы), которые вы хотите зашифровать!', button_1 = 'Окей')
 			else:
 				MessageBox(text = 'Сначала добавьте ключ шифрования!', button_1 = 'Окей')
 
@@ -188,7 +188,7 @@ class MainWindow(QtWidgets.QMainWindow):
 					except InvalidToken:
 						MessageBox(text = f'Файл "{file}" уже расшифрован!', button_1 = 'Окей')				
 				else:
-					MessageBox(text = 'Сначала добавьте файлы, которые вы хотите расшифровать!', button_1 = 'Окей')
+					MessageBox(text = 'Сначала добавьте файл(ы), которые вы хотите расшифровать!', button_1 = 'Окей')
 			else:
 				MessageBox(text = 'Сначала добавьте ключ шифрования!', button_1 = 'Окей')
 	# ==================================================================
