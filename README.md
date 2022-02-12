@@ -15,6 +15,7 @@ pip3 install -r requirements.txt
 ```
 3. Запускаем проект через команду:
 ```sh
+cd Cryptographer
 python main.py (Для Linux: python3 main.py)
 ```
 5. Наслаждаемся шифровальщиком! :D
