@@ -9,7 +9,7 @@ import Message_Box.message_box as message_box
 class QMessageBox(QtWidgets.QMainWindow):
 	signalButton = QtCore.pyqtSignal(str)
 
-	def __init__(self, text, button_1, button_2, parent = None):
+	def __init__(self, text, button_1, button_2, parent=None):
 		super().__init__(parent, QtCore.Qt.Window)
 		self.ui = message_box.Ui_Form()
 		self.ui.setupUi(self)
@@ -107,7 +107,7 @@ QPushButton:pressed{
 	# ==================================================================
 
 class MessageBox:
-	def __init__(self, text = '', button_1 = None, button_2 = None):
+	def __init__(self, text='', button_1=None, button_2=None):
 		self.message_box = QMessageBox(text, button_1, button_2)
 		self.message_box.signalButton.connect(lambda: self.message_box.close())
 		self.message_box.show()

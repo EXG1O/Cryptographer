@@ -63,7 +63,7 @@ class MainWindow(QtWidgets.QMainWindow):
 	# Логика для основных кнопок
 	# ==================================================================
 	def create_crypto_key_button(self):
-		message_box = MessageBox(text = 'Вы точно хотите создать ключ шифрования?', button_1 = 'Да', button_2 = 'Нет')
+		message_box = MessageBox(text='Вы точно хотите создать ключ шифрования?', button_1='Да', button_2='Нет')
 		message_box.message_box.signalButton.connect(lambda text: self.create_crypto_key(message_box.message_box, text))
 
 	def add_crypto_key(self):
@@ -87,22 +87,22 @@ class MainWindow(QtWidgets.QMainWindow):
 			self.ui.AddFilesButton.setText('Заменить файл(ы)')
 
 	def remove_files_button(self):
-		message_box = MessageBox(text = 'Вы точно хотите удалить файл(ы) для шифрования/расшифрования из данных программы?', button_1 = 'Да', button_2 = 'Нет')
+		message_box = MessageBox(text='Вы точно хотите удалить файл(ы) для шифрования/расшифрования из данных программы?', button_1='Да', button_2='Нет')
 		message_box.message_box.signalButton.connect(lambda text: self.remove_files(message_box.message_box, text))
 
 	def encrypt_files_button(self):
-		message_box = MessageBox(text = 'Вы точно хотите зашифровать файл(ы)?', button_1 = 'Да', button_2 = 'Нет')
+		message_box = MessageBox(text='Вы точно хотите зашифровать файл(ы)?', button_1='Да', button_2='Нет')
 		message_box.message_box.signalButton.connect(lambda text: self.encrypt_files(message_box.message_box, text))
 
 	def decipher_files_button(self):
-		message_box = MessageBox(text = 'Вы точно хотите расшифровать файл(ы)?', button_1 = 'Да', button_2 = 'Нет')
+		message_box = MessageBox(text='Вы точно хотите расшифровать файл(ы)?', button_1='Да', button_2='Нет')
 		message_box.message_box.signalButton.connect(lambda text: self.decipher_files(message_box.message_box, text))
 	# ==================================================================
 
 	# Обычные функции
 	# ==================================================================
 	def update_program_logs(self, recent_actions = 'Отсутствует'):
-		text = 'Ключ шифрования:\n'
+		text='Ключ шифрования:\n'
 		if self.program_info['Crypto_key'] != None:
 			text += f"  • {self.program_info['Crypto_key']}\n\n"
 		else:
@@ -131,8 +131,8 @@ class MainWindow(QtWidgets.QMainWindow):
 				with open(data[0], 'wb') as key_file:
 					key_file.write(key)
 
-				self.update_program_logs(recent_actions = 'Успешное создание ключа шифрования')
-				MessageBox(text = 'Вы успешно создали ключ шифрования.', button_1 = 'Окей')
+				self.update_program_logs(recent_actions='Успешное создание ключа шифрования')
+				MessageBox(text='Вы успешно создали ключ шифрования.', button_1='Окей')
 
 	def remove_files(self, message_box, text):
 		message_box.close()
@@ -141,7 +141,7 @@ class MainWindow(QtWidgets.QMainWindow):
 			self.program_info['Files'] = None
 			self.update_program_logs('Успешное удаление фай(а/лов) для шифрования/расшифрования из данных программы')
 			self.ui.AddFilesButton.setText('Добавить файл(ы)')
-			MessageBox(text = 'Вы успешно удалили файл(ы) для шифрования/расшифрования из данных программы.', button_1 = 'Окей')
+			MessageBox(text='Вы успешно удалили файл(ы) для шифрования/расшифрования из данных программы.', button_1='Окей')
 
 	def encrypt_files(self, message_box, text):
 		message_box.close()
@@ -159,12 +159,12 @@ class MainWindow(QtWidgets.QMainWindow):
 						with open(file, 'wb') as f:
 							f.write(data)
 
-					MessageBox(text = 'Вы успешно зашифровали файл(ы).', button_1 = 'Окей')
+					MessageBox(text='Вы успешно зашифровали файл(ы).', button_1='Окей')
 					self.update_program_logs('Успешное шифрование файл(а/ов).')
 				else:
-					MessageBox(text = 'Сначала добавьте файл(ы), которые вы хотите зашифровать!', button_1 = 'Окей')
+					MessageBox(text='Сначала добавьте файл(ы), которые вы хотите зашифровать!', button_1='Окей')
 			else:
-				MessageBox(text = 'Сначала добавьте ключ шифрования!', button_1 = 'Окей')
+				MessageBox(text='Сначала добавьте ключ шифрования!', button_1='Окей')
 
 	def decipher_files(self, message_box, text):
 		message_box.close()
@@ -183,12 +183,12 @@ class MainWindow(QtWidgets.QMainWindow):
 							with open(file, 'wb') as f:
 								f.write(data)
 
-						MessageBox(text = 'Вы успешно расшифровали файл(ы).', button_1 = 'Окей')
+						MessageBox(text='Вы успешно расшифровали файл(ы).', button_1='Окей')
 						self.update_program_logs('Успешное расшифрование файл(а/ов).')
 					except InvalidToken:
-						MessageBox(text = f'Файл "{file}" уже расшифрован!', button_1 = 'Окей')				
+						MessageBox(text=f'Файл "{file}" уже расшифрован!', button_1='Окей')
 				else:
-					MessageBox(text = 'Сначала добавьте файл(ы), которые вы хотите расшифровать!', button_1 = 'Окей')
+					MessageBox(text='Сначала добавьте файл(ы), которые вы хотите расшифровать!', button_1='Окей')
 			else:
-				MessageBox(text = 'Сначала добавьте ключ шифрования!', button_1 = 'Окей')
+				MessageBox(text='Сначала добавьте ключ шифрования!', button_1='Окей')
 	# ==================================================================
