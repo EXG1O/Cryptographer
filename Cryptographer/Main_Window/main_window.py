@@ -14,30 +14,146 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(763, 332)
+        MainWindow.resize(581, 371)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Window = QtWidgets.QFrame(self.centralwidget)
-        self.Window.setGeometry(QtCore.QRect(10, 10, 741, 311))
+        self.Window.setGeometry(QtCore.QRect(10, 10, 561, 351))
         self.Window.setStyleSheet("QFrame{\n"
 "    border-radius: 7px;\n"
-"    background-color: #3E2565;\n"
+"    background-color: #1B1D23;\n"
+"}\n"
+"\n"
+"QScrollBar:vertical{\n"
+"    border: none;\n"
+"    background: #595F76;\n"
+"    width: 15px;\n"
+"    margin: 15px 0 15px 0;\n"
+"    border-radius: 0px;\n"
+" }\n"
+"\n"
+"QScrollBar::handle:vertical{    \n"
+"    background-color: #494E61;\n"
+"    min-height: 30px;\n"
+"}\n"
+"QScrollBar::handle:vertical:hover{    \n"
+"    background-color: #D5006A;\n"
+"}\n"
+"QScrollBar::handle:vertical:pressed{    \n"
+"    background-color: #B9005C;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:vertical{\n"
+"    border: none;\n"
+"    background-color: #3A3F50;\n"
+"    height: 15px;\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::sub-line:vertical:hover{    \n"
+"    background-color: #D5006A;\n"
+"}\n"
+"QScrollBar::sub-line:vertical:pressed{    \n"
+"    background-color: #B9005C;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical{\n"
+"    border: none;\n"
+"    background-color: #3A3F50;\n"
+"    height: 15px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::add-line:vertical:hover{    \n"
+"    background-color: #D5006A;\n"
+"}\n"
+"QScrollBar::add-line:vertical:pressed{    \n"
+"    background-color: #B9005C;\n"
+"}\n"
+"\n"
+"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical{\n"
+"    background: none;\n"
+"}\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical{\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal{\n"
+"    border: none;\n"
+"    background: #595F76;\n"
+"    height: 15px;\n"
+"    margin: 0px 15 0px 15;\n"
+"    border-radius: opx;\n"
+" }\n"
+"\n"
+"QScrollBar::handle:horizontal{    \n"
+"    background-color: #494E61;\n"
+"    min-width: 30px;\n"
+"}\n"
+"QScrollBar::handle:horizontal:hover{    \n"
+"    background-color: #D5006A;\n"
+"}\n"
+"QScrollBar::handle:horizontal:pressed{    \n"
+"    background-color: #B9005C;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:horizontal{\n"
+"    border: none;\n"
+"    background-color: #3A3F50;\n"
+"    width: 15px;\n"
+"    border-top-left-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    subcontrol-position: left;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::sub-line:horizontal:hover{    \n"
+"    background-color:#D5006A;\n"
+"}\n"
+"QScrollBar::sub-line:horizontal:pressed{    \n"
+"    background-color: #B9005C;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal{\n"
+"    border: none;\n"
+"    background-color: #3A3F50;\n"
+"    width: 15px;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"    subcontrol-position: right;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::add-line:horizontal:hover{    \n"
+"    background-color: #D5006A;\n"
+"}\n"
+"QScrollBar::add-line:horizontal:pressed{    \n"
+"    background-color: #B9005C;\n"
+"}\n"
+"\n"
+"QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal{\n"
+"    background: none;\n"
+"}\n"
+"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal{\n"
+"    background: none;\n"
 "}")
         self.Window.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.Window.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Window.setObjectName("Window")
         self.WindowFrame = QtWidgets.QFrame(self.Window)
-        self.WindowFrame.setGeometry(QtCore.QRect(0, 0, 741, 31))
+        self.WindowFrame.setGeometry(QtCore.QRect(0, 0, 561, 31))
         self.WindowFrame.setStyleSheet("QFrame{\n"
 "    border-bottom-left-radius: 0px;\n"
 "    border-bottom-right-radius: 0px;\n"
-"    background-color: #623AA3;\n"
+"    background-color: #2C313C;\n"
 "}")
         self.WindowFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.WindowFrame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.WindowFrame.setObjectName("WindowFrame")
         self.CloseWindowButton = QtWidgets.QPushButton(self.WindowFrame)
-        self.CloseWindowButton.setGeometry(QtCore.QRect(701, 0, 41, 31))
+        self.CloseWindowButton.setGeometry(QtCore.QRect(521, 0, 41, 31))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -48,11 +164,11 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "    border: none;\n"
 "    border-top-right-radius: 7px;\n"
-"    background-color: #623AA3;\n"
+"    background-color: #2C313C;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #7A4FC1;\n"
+"    background-color: #45494D;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
@@ -60,7 +176,7 @@ class Ui_MainWindow(object):
 "}")
         self.CloseWindowButton.setObjectName("CloseWindowButton")
         self.MinimizeWindowButton = QtWidgets.QPushButton(self.WindowFrame)
-        self.MinimizeWindowButton.setGeometry(QtCore.QRect(660, 0, 41, 31))
+        self.MinimizeWindowButton.setGeometry(QtCore.QRect(480, 0, 41, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -70,12 +186,11 @@ class Ui_MainWindow(object):
         self.MinimizeWindowButton.setStyleSheet("QPushButton{\n"
 "    color: white;\n"
 "    border: none;\n"
-"    border-top-right-radius: 7px;\n"
-"    background-color: #623AA3;\n"
+"    background-color: #2C313C;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #7A4FC1;\n"
+"    background-color: #45494D;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
@@ -84,7 +199,7 @@ class Ui_MainWindow(object):
         self.MinimizeWindowButton.setDefault(False)
         self.MinimizeWindowButton.setObjectName("MinimizeWindowButton")
         self.ProgramLogsPlainTextEdit = QtWidgets.QPlainTextEdit(self.Window)
-        self.ProgramLogsPlainTextEdit.setGeometry(QtCore.QRect(20, 50, 701, 141))
+        self.ProgramLogsPlainTextEdit.setGeometry(QtCore.QRect(20, 40, 521, 141))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -93,12 +208,12 @@ class Ui_MainWindow(object):
         self.ProgramLogsPlainTextEdit.setStyleSheet("QPlainTextEdit{\n"
 "    color: white;\n"
 "    border-radius: 6px;\n"
-"    background-color: #623AA3;\n"
+"    background-color: #2C313C;\n"
 "}")
         self.ProgramLogsPlainTextEdit.setReadOnly(True)
         self.ProgramLogsPlainTextEdit.setObjectName("ProgramLogsPlainTextEdit")
         self.CreateCryptoKeyButton = QtWidgets.QPushButton(self.Window)
-        self.CreateCryptoKeyButton.setGeometry(QtCore.QRect(20, 200, 271, 41))
+        self.CreateCryptoKeyButton.setGeometry(QtCore.QRect(20, 190, 271, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -107,19 +222,19 @@ class Ui_MainWindow(object):
         self.CreateCryptoKeyButton.setStyleSheet("QPushButton{\n"
 "    color: white;\n"
 "    border-radius: 8px;\n"
-"    background-color: #C104A5;\n"
+"    background-color: #595F76;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #CF03B0;\n"
+"    background-color: #50566E;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-"    background-color: #AF0396;\n"
+"    background-color: #434965;\n"
 "}")
         self.CreateCryptoKeyButton.setObjectName("CreateCryptoKeyButton")
         self.AddCryptoKeyButton = QtWidgets.QPushButton(self.Window)
-        self.AddCryptoKeyButton.setGeometry(QtCore.QRect(20, 250, 271, 41))
+        self.AddCryptoKeyButton.setGeometry(QtCore.QRect(20, 240, 271, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -128,19 +243,19 @@ class Ui_MainWindow(object):
         self.AddCryptoKeyButton.setStyleSheet("QPushButton{\n"
 "    color: white;\n"
 "    border-radius: 8px;\n"
-"    background-color: #C104A5;\n"
+"    background-color: #595F76;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #CF03B0;\n"
+"    background-color: #50566E;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-"    background-color: #AF0396;\n"
+"    background-color: #434965;\n"
 "}")
         self.AddCryptoKeyButton.setObjectName("AddCryptoKeyButton")
         self.AddFilesButton = QtWidgets.QPushButton(self.Window)
-        self.AddFilesButton.setGeometry(QtCore.QRect(300, 200, 181, 41))
+        self.AddFilesButton.setGeometry(QtCore.QRect(20, 290, 271, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -149,19 +264,19 @@ class Ui_MainWindow(object):
         self.AddFilesButton.setStyleSheet("QPushButton{\n"
 "    color: white;\n"
 "    border-radius: 8px;\n"
-"    background-color: #C104A5;\n"
+"    background-color: #595F76;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #CF03B0;\n"
+"    background-color: #50566E;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-"    background-color: #AF0396;\n"
+"    background-color: #434965;\n"
 "}")
         self.AddFilesButton.setObjectName("AddFilesButton")
         self.EncryptFilesButton = QtWidgets.QPushButton(self.Window)
-        self.EncryptFilesButton.setGeometry(QtCore.QRect(490, 200, 231, 41))
+        self.EncryptFilesButton.setGeometry(QtCore.QRect(300, 190, 241, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -170,19 +285,19 @@ class Ui_MainWindow(object):
         self.EncryptFilesButton.setStyleSheet("QPushButton{\n"
 "    color: white;\n"
 "    border-radius: 8px;\n"
-"    background-color: #C104A5;\n"
+"    background-color: #595F76;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #CF03B0;\n"
+"    background-color: #50566E;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-"    background-color: #AF0396;\n"
+"    background-color: #434965;\n"
 "}")
         self.EncryptFilesButton.setObjectName("EncryptFilesButton")
         self.DecipherFilesButton = QtWidgets.QPushButton(self.Window)
-        self.DecipherFilesButton.setGeometry(QtCore.QRect(490, 250, 231, 41))
+        self.DecipherFilesButton.setGeometry(QtCore.QRect(300, 240, 241, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -191,19 +306,19 @@ class Ui_MainWindow(object):
         self.DecipherFilesButton.setStyleSheet("QPushButton{\n"
 "    color: white;\n"
 "    border-radius: 8px;\n"
-"    background-color: #C104A5;\n"
+"    background-color: #595F76;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #CF03B0;\n"
+"    background-color: #50566E;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-"    background-color: #AF0396;\n"
+"    background-color: #434965;\n"
 "}")
         self.DecipherFilesButton.setObjectName("DecipherFilesButton")
         self.RemoveFilesButton = QtWidgets.QPushButton(self.Window)
-        self.RemoveFilesButton.setGeometry(QtCore.QRect(300, 250, 181, 41))
+        self.RemoveFilesButton.setGeometry(QtCore.QRect(300, 290, 241, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -212,15 +327,15 @@ class Ui_MainWindow(object):
         self.RemoveFilesButton.setStyleSheet("QPushButton{\n"
 "    color: white;\n"
 "    border-radius: 8px;\n"
-"    background-color: #C104A5;\n"
+"    background-color: #595F76;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color: #CF03B0;\n"
+"    background-color: #50566E;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-"    background-color: #AF0396;\n"
+"    background-color: #434965;\n"
 "}")
         self.RemoveFilesButton.setObjectName("RemoveFilesButton")
         MainWindow.setCentralWidget(self.centralwidget)

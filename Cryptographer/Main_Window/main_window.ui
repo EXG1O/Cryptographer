@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>763</width>
-    <height>332</height>
+    <width>581</width>
+    <height>371</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,14 +19,130 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>741</width>
-      <height>311</height>
+      <width>561</width>
+      <height>351</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QFrame{
 	border-radius: 7px;
-	background-color: #3E2565;
+	background-color: #1B1D23;
+}
+
+QScrollBar:vertical{
+	border: none;
+    background: #595F76;
+    width: 15px;
+    margin: 15px 0 15px 0;
+	border-radius: 0px;
+ }
+
+QScrollBar::handle:vertical{	
+	background-color: #494E61;
+	min-height: 30px;
+}
+QScrollBar::handle:vertical:hover{	
+	background-color: #D5006A;
+}
+QScrollBar::handle:vertical:pressed{	
+	background-color: #B9005C;
+}
+
+QScrollBar::sub-line:vertical{
+	border: none;
+	background-color: #3A3F50;
+	height: 15px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover{	
+	background-color: #D5006A;
+}
+QScrollBar::sub-line:vertical:pressed{	
+	background-color: #B9005C;
+}
+
+QScrollBar::add-line:vertical{
+	border: none;
+	background-color: #3A3F50;
+	height: 15px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover{	
+	background-color: #D5006A;
+}
+QScrollBar::add-line:vertical:pressed{	
+	background-color: #B9005C;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical{
+	background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical{
+	background: none;
+}
+
+QScrollBar:horizontal{
+	border: none;
+    background: #595F76;
+	height: 15px;
+	margin: 0px 15 0px 15;
+	border-radius: opx;
+ }
+
+QScrollBar::handle:horizontal{	
+	background-color: #494E61;
+	min-width: 30px;
+}
+QScrollBar::handle:horizontal:hover{	
+	background-color: #D5006A;
+}
+QScrollBar::handle:horizontal:pressed{	
+	background-color: #B9005C;
+}
+
+QScrollBar::sub-line:horizontal{
+	border: none;
+	background-color: #3A3F50;
+	width: 15px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	subcontrol-position: left;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal:hover{	
+	background-color:#D5006A;
+}
+QScrollBar::sub-line:horizontal:pressed{	
+	background-color: #B9005C;
+}
+
+QScrollBar::add-line:horizontal{
+	border: none;
+	background-color: #3A3F50;
+	width: 15px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: right;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal:hover{	
+	background-color: #D5006A;
+}
+QScrollBar::add-line:horizontal:pressed{	
+	background-color: #B9005C;
+}
+
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal{
+	background: none;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal{
+	background: none;
 }</string>
     </property>
     <property name="frameShape">
@@ -40,7 +156,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>741</width>
+       <width>561</width>
        <height>31</height>
       </rect>
      </property>
@@ -48,7 +164,7 @@
       <string notr="true">QFrame{
 	border-bottom-left-radius: 0px;
 	border-bottom-right-radius: 0px;
-	background-color: #623AA3;
+	background-color: #2C313C;
 }</string>
      </property>
      <property name="frameShape">
@@ -60,7 +176,7 @@
      <widget class="QPushButton" name="CloseWindowButton">
       <property name="geometry">
        <rect>
-        <x>701</x>
+        <x>521</x>
         <y>0</y>
         <width>41</width>
         <height>31</height>
@@ -81,11 +197,11 @@
 	color: white;
 	border: none;
 	border-top-right-radius: 7px;
-	background-color: #623AA3;
+	background-color: #2C313C;
 }
 
 QPushButton:hover{
-	background-color: #7A4FC1;
+	background-color: #45494D;
 }
 
 QPushButton:pressed{
@@ -99,7 +215,7 @@ QPushButton:pressed{
      <widget class="QPushButton" name="MinimizeWindowButton">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>480</x>
         <y>0</y>
         <width>41</width>
         <height>31</height>
@@ -119,12 +235,11 @@ QPushButton:pressed{
        <string notr="true">QPushButton{
 	color: white;
 	border: none;
-	border-top-right-radius: 7px;
-	background-color: #623AA3;
+	background-color: #2C313C;
 }
 
 QPushButton:hover{
-	background-color: #7A4FC1;
+	background-color: #45494D;
 }
 
 QPushButton:pressed{
@@ -143,8 +258,8 @@ QPushButton:pressed{
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>50</y>
-       <width>701</width>
+       <y>40</y>
+       <width>521</width>
        <height>141</height>
       </rect>
      </property>
@@ -159,7 +274,7 @@ QPushButton:pressed{
       <string notr="true">QPlainTextEdit{
 	color: white;
 	border-radius: 6px;
-	background-color: #623AA3;
+	background-color: #2C313C;
 }</string>
      </property>
      <property name="readOnly">
@@ -180,7 +295,7 @@ QPushButton:pressed{
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>200</y>
+       <y>190</y>
        <width>271</width>
        <height>41</height>
       </rect>
@@ -196,15 +311,15 @@ QPushButton:pressed{
       <string notr="true">QPushButton{
 	color: white;
 	border-radius: 8px;
-	background-color: #C104A5;
+	background-color: #595F76;
 }
 
 QPushButton:hover{
-	background-color: #CF03B0;
+	background-color: #50566E;
 }
 
 QPushButton:pressed{
-	background-color: #AF0396;
+	background-color: #434965;
 }</string>
      </property>
      <property name="text">
@@ -215,7 +330,7 @@ QPushButton:pressed{
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>250</y>
+       <y>240</y>
        <width>271</width>
        <height>41</height>
       </rect>
@@ -231,15 +346,15 @@ QPushButton:pressed{
       <string notr="true">QPushButton{
 	color: white;
 	border-radius: 8px;
-	background-color: #C104A5;
+	background-color: #595F76;
 }
 
 QPushButton:hover{
-	background-color: #CF03B0;
+	background-color: #50566E;
 }
 
 QPushButton:pressed{
-	background-color: #AF0396;
+	background-color: #434965;
 }</string>
      </property>
      <property name="text">
@@ -249,9 +364,9 @@ QPushButton:pressed{
     <widget class="QPushButton" name="AddFilesButton">
      <property name="geometry">
       <rect>
-       <x>300</x>
-       <y>200</y>
-       <width>181</width>
+       <x>20</x>
+       <y>290</y>
+       <width>271</width>
        <height>41</height>
       </rect>
      </property>
@@ -266,15 +381,15 @@ QPushButton:pressed{
       <string notr="true">QPushButton{
 	color: white;
 	border-radius: 8px;
-	background-color: #C104A5;
+	background-color: #595F76;
 }
 
 QPushButton:hover{
-	background-color: #CF03B0;
+	background-color: #50566E;
 }
 
 QPushButton:pressed{
-	background-color: #AF0396;
+	background-color: #434965;
 }</string>
      </property>
      <property name="text">
@@ -284,9 +399,9 @@ QPushButton:pressed{
     <widget class="QPushButton" name="EncryptFilesButton">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>200</y>
-       <width>231</width>
+       <x>300</x>
+       <y>190</y>
+       <width>241</width>
        <height>41</height>
       </rect>
      </property>
@@ -301,15 +416,15 @@ QPushButton:pressed{
       <string notr="true">QPushButton{
 	color: white;
 	border-radius: 8px;
-	background-color: #C104A5;
+	background-color: #595F76;
 }
 
 QPushButton:hover{
-	background-color: #CF03B0;
+	background-color: #50566E;
 }
 
 QPushButton:pressed{
-	background-color: #AF0396;
+	background-color: #434965;
 }</string>
      </property>
      <property name="text">
@@ -319,9 +434,9 @@ QPushButton:pressed{
     <widget class="QPushButton" name="DecipherFilesButton">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>250</y>
-       <width>231</width>
+       <x>300</x>
+       <y>240</y>
+       <width>241</width>
        <height>41</height>
       </rect>
      </property>
@@ -336,15 +451,15 @@ QPushButton:pressed{
       <string notr="true">QPushButton{
 	color: white;
 	border-radius: 8px;
-	background-color: #C104A5;
+	background-color: #595F76;
 }
 
 QPushButton:hover{
-	background-color: #CF03B0;
+	background-color: #50566E;
 }
 
 QPushButton:pressed{
-	background-color: #AF0396;
+	background-color: #434965;
 }</string>
      </property>
      <property name="text">
@@ -355,8 +470,8 @@ QPushButton:pressed{
      <property name="geometry">
       <rect>
        <x>300</x>
-       <y>250</y>
-       <width>181</width>
+       <y>290</y>
+       <width>241</width>
        <height>41</height>
       </rect>
      </property>
@@ -371,15 +486,15 @@ QPushButton:pressed{
       <string notr="true">QPushButton{
 	color: white;
 	border-radius: 8px;
-	background-color: #C104A5;
+	background-color: #595F76;
 }
 
 QPushButton:hover{
-	background-color: #CF03B0;
+	background-color: #50566E;
 }
 
 QPushButton:pressed{
-	background-color: #AF0396;
+	background-color: #434965;
 }</string>
      </property>
      <property name="text">

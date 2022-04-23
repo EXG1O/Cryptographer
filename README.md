@@ -22,4 +22,4 @@ python main.py (Для Linux: python3 main.py)
 
 # Демонстрация ПО
 ## Главное окно:
-![software_main_window](Icons/main_window.png)
+![software_main_window](Icons/main_window.jpg)

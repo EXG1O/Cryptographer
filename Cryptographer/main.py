@@ -9,6 +9,7 @@ from main_window import MainWindow
 # Другие
 import sys
 
+# Запуск GUI
 if __name__ == '__main__':
 	app = QtWidgets.QApplication(sys.argv)
 	myapp = MainWindow()
